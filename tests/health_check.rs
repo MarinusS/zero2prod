@@ -1,7 +1,7 @@
-use std::{assert_eq};
+use std::assert_eq;
 
 fn spawn_app() {
-    let server = zero2prod::run().expect("Failed to bind address");
+    let server = zero2prod::run("127.0.0.1:0").expect("Failed to bind address");
 
     let _ = tokio::spawn(server);
 }
